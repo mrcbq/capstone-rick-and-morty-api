@@ -5,3 +5,42 @@
   margin: 0;
   padding: 0;
 }
+
+/* Header */
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 3em;
+  justify-content: center;
+  padding: 1em;
+}
+
+nav {
+  width: 22.5em;
+}
+
+.nav-element {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+}
+
+.nav-element li a {
+  text-decoration: none;
+  color: #000;
+}
+
+/* Footer */
+
+footer {
+  position: absolute;
+  bottom: 0;
+  padding: 2em;
+  border-top: 1px solid #000;
+  width: 100%;
+}
+
+footer p {
+  font-size: 1.2em;
+}

@@ -5,3 +5,26 @@
   margin: 0;
   padding: 0;
 }
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 3em;
+  justify-content: center;
+  padding: 1em;
+}
+
+nav {
+  width: 22.5em;
+}
+
+.nav-element {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+}
+
+.nav-element li a {
+  text-decoration: none;
+  color: #000;
+}

@@ -44,3 +44,13 @@ footer {
 footer p {
   font-size: 1.2em;
 }
+
+/* Pop up Window */
+
+.popup-ele {
+  position: fixed;
+  top: 1em;
+  padding: 1em;
+  border-radius: 8px;
+  height: 95%;
+}

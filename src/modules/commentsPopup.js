@@ -1,18 +1,5 @@
 import quitIcon from '../img/icons8-x-50 (1).png';
 
-const fetchPopupDetails = async (id, container) => {
-    try {
-      const response = await fetch(
-        `https://rickandmortyapi.com/api/character/${id}`,
-      );
-      const data = await response.json();
-      console.log(data);
-      popupComments(data, container);
-    } catch {
-      alert('Error trying to connect with the API');
-    }
-};
-
 const popupComments = (data, container) => {
   container.innerHTML = `
     <div class="popup-ele">
@@ -32,10 +19,22 @@ const popupComments = (data, container) => {
         </div>
     </div>
     `;
-    const quitButton = document.querySelector('#quit');
-    quitButton.addEventListener('click', () => {
-        container.innerHTML = '';
-    })
+  const quitButton = document.querySelector('#quit');
+  quitButton.addEventListener('click', () => {
+    container.innerHTML = '';
+  });
+};
+
+const fetchPopupDetails = async (id, container) => {
+  try {
+    const response = await fetch(
+      `https://rickandmortyapi.com/api/character/${id}`,
+    );
+    const data = await response.json();
+    popupComments(data, container);
+  } catch {
+    alert('Error trying to connect with the API');
+  }
 };
 
 export default fetchPopupDetails;

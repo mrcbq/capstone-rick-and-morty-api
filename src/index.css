@@ -80,7 +80,6 @@ footer p {
 }
 
 .quit-button {
-  background-color: unset;
   border: none;
   cursor: pointer;
   background-color: #edebeb;
@@ -99,7 +98,7 @@ footer p {
   margin: 1.5em;
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
   .popup-description-elements {
     grid-template-columns: 1fr;
   }

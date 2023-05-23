@@ -29,6 +29,23 @@ const createCard = (character) => {
   likeButton.appendChild(likeButtonImg);
   container.appendChild(likeButton);
 
+  const likesNumber = document.createElement('p');
+  likesNumber.textContent = '5 Likes';
+  container.appendChild(likesNumber);
+
+  const commentsButton = document.createElement('button');
+  commentsButton.classList.add('comments-button');
+  commentsButton.textContent = 'Comments';
+  commentsButton.addEventListener('click', () => {
+    console.log(`Comment ${character.name}`);
+  });
+  container.appendChild(commentsButton);
+
+  const reservationsButton = document.createElement('button');
+  reservationsButton.classList.add('comments-button');
+  reservationsButton.textContent = 'Reservations';
+  container.appendChild(reservationsButton);
+
   card.appendChild(container);
 
   return card;

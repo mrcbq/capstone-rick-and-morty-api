@@ -1,6 +1,7 @@
 const createCard = (character) => {
   const card = document.createElement('div');
   card.className = 'card';
+  card.id = character.id;
 
   const img = document.createElement('img');
   img.src = character.image;

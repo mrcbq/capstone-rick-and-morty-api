@@ -1,12 +1,11 @@
 import './index.css';
-import charactersArray from './modules/characters.js';
+import charactersData from './modules/characters.js';
 import createCard from './modules/createCard.js';
 
 const container = document.getElementById('card-container');
 
-console.log(charactersArray);
-
-charactersArray.forEach((character) => {
+charactersData.forEach((character) => {
   const card = createCard(character);
+  console.log(card);
   container.appendChild(card);
 });

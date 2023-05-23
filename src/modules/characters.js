@@ -8,6 +8,6 @@ const getCharacters = async (id) => {
   return characterData;
 };
 
-const charactersData = await getCharacters(getRandomArray(4));
+const charactersData = await getCharacters(getRandomArray(6));
 
 export default charactersData;

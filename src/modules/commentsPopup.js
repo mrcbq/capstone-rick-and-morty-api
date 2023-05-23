@@ -33,16 +33,4 @@ const popupComments = (data, container) => {
   });
 };
 
-const fetchPopupDetails = async (id, container) => {
-  try {
-    const response = await fetch(
-      `https://rickandmortyapi.com/api/character/${id}`,
-    );
-    const data = await response.json();
-    popupComments(data, container);
-  } catch {
-    alert('Error trying to connect with the API');
-  }
-};
-
-export default fetchPopupDetails;
+export default popupComments;

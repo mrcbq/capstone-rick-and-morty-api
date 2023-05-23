@@ -46,11 +46,61 @@ footer p {
 }
 
 /* Pop up Window */
+.popup {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 
 .popup-ele {
   position: fixed;
+  z-index: 1;
   top: 1em;
   padding: 1em;
-  border-radius: 8px;
+  border-radius: 4px;
   height: 95%;
+  width: 70%;
+  background-color: rgb(226, 226, 226);
+}
+
+.popup-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.popup-description img {
+  width: 15em;
+  margin-bottom: 1em;
+}
+
+.button-div {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.quit-button {
+  background-color: unset;
+  border: none;
+  cursor: pointer;
+  background-color: #edebeb;
+  height: 2.25em;
+}
+
+.quit-button img {
+  width: 2.2em;
+}
+
+.popup-description-elements {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3em;
+  row-gap: 1em;
+  margin: 1.5em;
+}
+
+@media (max-width: 768px){
+  .popup-description-elements {
+    grid-template-columns: 1fr;
+  }
 }

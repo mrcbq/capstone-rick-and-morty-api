@@ -98,6 +98,40 @@ footer p {
   margin: 1.5em;
 }
 
+.popup-form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  max-width: 30em;
+  margin: 0 auto;
+}
+
+.popup-form-section h2 {
+  text-align: center;
+}
+
+#comment-form {
+  margin-left: 3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+#comment-form input {
+  max-width: 12em;
+  padding: 0.3em;
+}
+
+#comment-form textarea {
+  max-width: 15em;
+  height: 6em;
+}
+
+.button-comment {
+  width: 9em;
+  padding: 0.4em;
+}
+
 @media (max-width: 768px) {
   .popup-description-elements {
     grid-template-columns: 1fr;

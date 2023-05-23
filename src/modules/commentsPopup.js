@@ -17,6 +17,14 @@ const popupComments = (data, container) => {
                 <p>Location: ${data.location.name}</p>
             </div>
         </div>
+        <div class="popup-form-section">
+            <h2>Add a Comment</h2>
+            <form id="comment-form">
+                <input type="text" id="username" name="username" placeholder="Your Name" required> <br>
+                <textarea id="text-area" placeholder="Your insights" maxlength="300" name="message" required></textarea> <br>
+                <button type="submit" class="button-comment">Comments</button>
+            </form>
+        </div>
     </div>
     `;
   const quitButton = document.querySelector('#quit');

@@ -31,14 +31,38 @@ nav {
   color: #000;
 }
 
+/* Cards */
+
+#cards-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  width: 90%;
+  margin: 2em auto;
+}
+
+.card {
+  margin-bottom: 1em;
+}
+
+.card-image {
+  width: 12em;
+}
+
+.like-button {
+  background-color: unset;
+  border: none;
+  cursor: pointer;
+}
+
 /* Footer */
 
 footer {
-  position: absolute;
-  bottom: 0;
   padding: 2em;
   border-top: 1px solid #000;
   width: 100%;
+  background-color: #fff;
+  margin-top: 1em;
 }
 
 footer p {

@@ -8,7 +8,7 @@ import postLike from './modules/involvementAPI.js';
 const containerPopup = document.querySelector('.popup');
 const container = document.getElementById('cards-container');
 
-const charactersData = await getCharacters([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+const charactersData = await getCharacters([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]);
 
 container.addEventListener('click', async (e) => {
   if (e.target.classList.contains('comments-button')) {

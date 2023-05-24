@@ -1,4 +1,4 @@
-const fetchComments = async (id) => {
+const getComments = async (id) => {
   try {
     const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/xqHl95viv3D6FREdQd3p/comments?item_id=${id}`);
     const data = await response.json();
@@ -9,9 +9,9 @@ const fetchComments = async (id) => {
     const noComments = ['No comments yet'];
     return noComments;
   } catch (error) {
-    alert(error.message);
+    console.log(error.message);
   }
   return 0;
 };
 
-export default fetchComments;
+export default getComments;

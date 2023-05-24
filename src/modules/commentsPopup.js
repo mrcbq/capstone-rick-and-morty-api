@@ -1,6 +1,7 @@
 import quitIcon from '../img/icons8-x-50 (1).png';
 import postComment from './postComment.js';
-import fetchComments from './fetchComments.js';
+import getComments from './getComments.js';
+import counterComments from './counterComments.js';
 
 const popupComments = (data, container) => {
   container.innerHTML = `
@@ -19,7 +20,7 @@ const popupComments = (data, container) => {
                 <p>Location: ${data.location.name}</p>
             </div>
             <div class="comments-section">
-                <h2>Comments</h2>
+                <h2 class="heading-comment">Comments</h2>
                 <ul class="comments-elements">
                 </ul>
             </div>
@@ -43,19 +44,24 @@ const popupComments = (data, container) => {
   const username = document.getElementById('username');
   const comment = document.getElementById('text-area');
   const commentsContainer = document.querySelector('.comments-elements');
+  const headingComments = document.querySelector('.heading-comment');
+
+  headingComments.textContent = `Comment(${counterComments(commentsContainer)})`;
 
   const commentsData = async () => {
-    const commentsContent = await fetchComments(data.id);
+    const commentsContent = await getComments(data.id);
     commentsContainer.innerHTML = '';
     if (commentsContent[0].creation_date) {
       commentsContent.forEach((comment) => {
         commentsContainer.innerHTML += `
-          <li><p>${comment.creation_date} ${comment.username}: ${comment.comment}</p></li>
+          <li class="individual-comment"><p>${comment.creation_date} ${comment.username}: ${comment.comment}</p></li>
       `;
       });
     } else {
       commentsContainer.innerHTML = `<li><p>${commentsContent[0]}</p></li>`;
     }
+
+    headingComments.textContent = `Comment(${counterComments(commentsContainer)})`;
   };
 
   commentsData();

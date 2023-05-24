@@ -1,4 +1,6 @@
 import quitIcon from '../img/icons8-x-50 (1).png';
+import postComment from './postComment.js';
+import fetchComments from './fetchComments.js';
 
 const popupComments = (data, container) => {
   container.innerHTML = `
@@ -16,6 +18,11 @@ const popupComments = (data, container) => {
                 <p>Origin: ${data.origin.name}</p>
                 <p>Location: ${data.location.name}</p>
             </div>
+            <div class="comments-section">
+                <h2>Comments</h2>
+                <ul class="comments-elements">
+                </ul>
+            </div>
         </div>
         <div class="popup-form-section">
             <h2>Add a Comment</h2>
@@ -30,6 +37,37 @@ const popupComments = (data, container) => {
   const quitButton = document.querySelector('#quit');
   quitButton.addEventListener('click', () => {
     container.innerHTML = '';
+  });
+
+  const formAddComment = document.getElementById('comment-form');
+  const username = document.getElementById('username');
+  const comment = document.getElementById('text-area');
+  const commentsContainer = document.querySelector('.comments-elements');
+
+  const commentsData = async () => {
+    const commentsContent = await fetchComments(data.id);
+    commentsContainer.innerHTML = '';
+    if (commentsContent[0].creation_date) {
+      commentsContent.forEach((comment) => {
+        commentsContainer.innerHTML += `
+          <li><p>${comment.creation_date} ${comment.username}: ${comment.comment}</p></li>
+      `;
+      });
+    } else {
+      commentsContainer.innerHTML = `<li><p>${commentsContent[0]}</p></li>`;
+    }
+  };
+
+  commentsData();
+
+  formAddComment.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const name = username.value;
+    const text = comment.value;
+    await postComment(data.id, name, text);
+    commentsData();
+    username.value = '';
+    comment.value = '';
   });
 };
 

@@ -44,7 +44,7 @@ const popupComments = (data, container) => {
   const username = document.getElementById('username');
   const comment = document.getElementById('text-area');
   const commentsContainer = document.querySelector('.comments-elements');
-  const headingComments = document.querySelector('.heading-comment')
+  const headingComments = document.querySelector('.heading-comment');
 
   headingComments.textContent = `Comment(${counterComments(commentsContainer)})`;
 

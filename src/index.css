@@ -83,7 +83,7 @@ footer p {
   top: 1em;
   padding: 1em;
   border-radius: 4px;
-  height: 95%;
+  height: auto;
   width: 70%;
   background-color: rgb(226, 226, 226);
 }

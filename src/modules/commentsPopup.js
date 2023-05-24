@@ -1,30 +1,6 @@
 import quitIcon from '../img/icons8-x-50 (1).png';
-
-const postComment = async (id, username, commente) => {
-  try {
-    const response = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/xqHl95viv3D6FREdQd3p/comments', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },      
-      body: JSON.stringify({
-        item_id: id,
-        username: username,
-        comment: commente,
-      }),
-    });
-
-    if (response.ok) {
-      console.log('Comment was successfully posted');
-    } else {
-      const result = await response.json();
-      console.log(result);
-    }
-
-  } catch (error) {
-    alert(error);
-  }   
-}
+import postComment from './postComment.js';
+import fetchComments from './fetchComments.js';
 
 const popupComments = (data, container) => {
   container.innerHTML = `
@@ -41,6 +17,11 @@ const popupComments = (data, container) => {
                 <p>Gender: ${data.gender}</p>
                 <p>Origin: ${data.origin.name}</p>
                 <p>Location: ${data.location.name}</p>
+            </div>
+            <div class="comments-section">
+                <h2>Comments</h2>
+                <ul class="comments-elements">
+                </ul>
             </div>
         </div>
         <div class="popup-form-section">
@@ -61,15 +42,35 @@ const popupComments = (data, container) => {
   const formAddComment = document.getElementById('comment-form');
   const username = document.getElementById('username');
   const comment = document.getElementById('text-area');
+  const commentsContainer = document.querySelector('.comments-elements');
 
-  formAddComment.addEventListener('submit', (e) => {
+  const commentsData = async () => {
+    const commentsContent = await fetchComments(data.id);
+    console.log(commentsContent);
+    commentsContainer.innerHTML = '';
+    if(commentsContent[0].creation_date){
+      commentsContent.forEach(comment => {
+      commentsContainer.innerHTML += `
+          <li><p>${comment.creation_date} ${comment.username}: ${comment.comment}</p></li>
+      `;
+      });
+    } else {
+      commentsContainer.innerHTML = `<li><p>${commentsContent[0]}</p></li>`;
+    }
+  }
+
+  commentsData()
+
+  formAddComment.addEventListener('submit', async (e) => {
     e.preventDefault()
     const name = username.value;
     const text = comment.value;
-    postComment(data.id, name, text);
+    await postComment(data.id, name, text);
+    commentsData();
     username.value = '';
-    comment.value = ''; 
+    comment.value = '';
   })
+
 };
 
 export default popupComments;

@@ -15,17 +15,15 @@ container.addEventListener('click', async (e) => {
     const { id } = e.target.parentElement.parentElement;
     const characterDetail = await getCharacters(id);
     popupComments(characterDetail, containerPopup);
-  } else if (e.target.classList.contains('like-button')) {
-    const { id } = e.target.parentElement.parentElement;
-    const postlikeMsg = await postLike(id);
-    // console.log(postlikeMsg);
+  } else if (e.target.classList.contains('like-img')) {
+    const { id } = e.target.parentElement.parentElement.parentElement;
+    // console.log(id);
+    await postLike(id);
   }
 });
 
 charactersData.forEach((character) => {
   const card = createCard(character);
-  console.log(card);
+  // console.log(card);
   container.appendChild(card);
 });
-
-// postLike('901');

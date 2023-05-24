@@ -20,12 +20,10 @@ const createCard = (character) => {
 
   const likeButton = document.createElement('button');
   likeButton.classList.add('like-button');
-  // likeButton.addEventListener('click', () => {
-  //   console.log(`Liked ${character.name}`);
-  // });
 
   const likeButtonImg = document.createElement('img');
   likeButtonImg.src = likeImg;
+  likeButtonImg.classList.add('like-img');
   likeButton.appendChild(likeButtonImg);
   container.appendChild(likeButton);
 

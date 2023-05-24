@@ -46,31 +46,29 @@ const popupComments = (data, container) => {
 
   const commentsData = async () => {
     const commentsContent = await fetchComments(data.id);
-    console.log(commentsContent);
     commentsContainer.innerHTML = '';
-    if(commentsContent[0].creation_date){
-      commentsContent.forEach(comment => {
-      commentsContainer.innerHTML += `
+    if (commentsContent[0].creation_date) {
+      commentsContent.forEach((comment) => {
+        commentsContainer.innerHTML += `
           <li><p>${comment.creation_date} ${comment.username}: ${comment.comment}</p></li>
       `;
       });
     } else {
       commentsContainer.innerHTML = `<li><p>${commentsContent[0]}</p></li>`;
     }
-  }
+  };
 
-  commentsData()
+  commentsData();
 
   formAddComment.addEventListener('submit', async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const name = username.value;
     const text = comment.value;
     await postComment(data.id, name, text);
     commentsData();
     username.value = '';
     comment.value = '';
-  })
-
+  });
 };
 
 export default popupComments;

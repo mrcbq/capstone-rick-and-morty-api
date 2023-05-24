@@ -2,7 +2,7 @@ import './index.css';
 import getCharacters from './modules/characters.js';
 import createCard from './modules/createCard.js';
 import popupComments from './modules/commentsPopup.js';
-import getRandomArray from './modules/randomNumber';
+import getRandomArray from './modules/randomNumber.js';
 
 const containerPopup = document.querySelector('.popup');
 const container = document.getElementById('cards-container');
@@ -19,6 +19,5 @@ container.addEventListener('click', async (e) => {
 
 charactersData.forEach((character) => {
   const card = createCard(character);
-  console.log(card);
   container.appendChild(card);
 });

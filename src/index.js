@@ -20,7 +20,6 @@ container.addEventListener('click', async (e) => {
     popupComments(characterDetail, containerPopup);
   } else if (e.target.classList.contains('like-img')) {
     const { id } = e.target.parentElement.parentElement.parentElement.parentElement.parentElement;
-    console.log(id);
     await postLike(id);
     const likesData = await getLikes();
     const idIsEqualsTo = (likeObj, idx) => likeObj.item_id === idx;

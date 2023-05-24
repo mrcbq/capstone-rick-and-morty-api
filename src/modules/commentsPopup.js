@@ -1,5 +1,31 @@
 import quitIcon from '../img/icons8-x-50 (1).png';
 
+const postComment = async (id, username, commente) => {
+  try {
+    const response = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/xqHl95viv3D6FREdQd3p/comments', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },      
+      body: JSON.stringify({
+        item_id: id,
+        username: username,
+        comment: commente,
+      }),
+    });
+
+    if (response.ok) {
+      console.log('Comment was successfully posted');
+    } else {
+      const result = await response.json();
+      console.log(result);
+    }
+
+  } catch (error) {
+    alert(error);
+  }   
+}
+
 const popupComments = (data, container) => {
   container.innerHTML = `
     <div class="popup-ele">
@@ -31,6 +57,19 @@ const popupComments = (data, container) => {
   quitButton.addEventListener('click', () => {
     container.innerHTML = '';
   });
+
+  const formAddComment = document.getElementById('comment-form');
+  const username = document.getElementById('username');
+  const comment = document.getElementById('text-area');
+
+  formAddComment.addEventListener('submit', (e) => {
+    e.preventDefault()
+    const name = username.value;
+    const text = comment.value;
+    postComment(data.id, name, text);
+    username.value = '';
+    comment.value = ''; 
+  })
 };
 
 export default popupComments;

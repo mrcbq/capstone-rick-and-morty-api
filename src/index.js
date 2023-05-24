@@ -12,7 +12,6 @@ const counterCards = document.getElementById('counter-cards');
 // const charactersData = await getCharacters([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]);
 const charactersData = await getCharacters(getRandomArray(Math.random() * 10 + 1));
 
-
 container.addEventListener('click', async (e) => {
   if (e.target.classList.contains('comments-button')) {
     const { id } = e.target.parentElement.parentElement;
@@ -24,9 +23,7 @@ container.addEventListener('click', async (e) => {
     const likesData = await getLikes();
     const idIsEqualsTo = (likeObj, idx) => likeObj.item_id === idx;
     const result = likesData.find((obj) => idIsEqualsTo(obj, id)) ?? 0;
-    e.target.parentElement.parentElement.children[2].textContent = `${
-      result.likes ?? 0
-    } Likes`;
+    e.target.parentElement.parentElement.children[2].textContent = `${result.likes ?? 0} Likes`;
   }
 });
 

@@ -17,9 +17,15 @@ const createCard = (character) => {
   const container = document.createElement('div');
   container.className = 'container';
 
+  const containerCardTitleLikeBtn = document.createElement('div');
+  containerCardTitleLikeBtn.className = 'containerCardTitleLikeBtn';
+
   const name = document.createElement('h4');
   name.textContent = character.name;
-  container.appendChild(name);
+  containerCardTitleLikeBtn.appendChild(name);
+
+  const containerLikes = document.createElement('div');
+  containerLikes.className = 'containerLikes';
 
   const likeButton = document.createElement('button');
   likeButton.classList.add('like-button');
@@ -27,15 +33,19 @@ const createCard = (character) => {
   const likeButtonImg = document.createElement('img');
   likeButtonImg.src = likeImg;
   likeButtonImg.classList.add('like-img');
+
   likeButton.appendChild(likeButtonImg);
-  container.appendChild(likeButton);
+  containerLikes.appendChild(likeButton);
 
   const idIsEqualsTo = (likeObj, idx) => likeObj.item_id === idx;
   const result = likesData.find((obj) => idIsEqualsTo(obj, card.id)) ?? 0;
 
   const likesNumber = document.createElement('p');
   likesNumber.textContent = `${result.likes ?? 0} Likes`;
-  container.appendChild(likesNumber);
+  // likesNumber.textContent = '5 Likes';
+  containerLikes.appendChild(likesNumber);
+  containerCardTitleLikeBtn.appendChild(containerLikes);
+  container.appendChild(containerCardTitleLikeBtn);
 
   const commentsButton = document.createElement('button');
   commentsButton.classList.add('comments-button');

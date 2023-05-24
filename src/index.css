@@ -4,7 +4,8 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 
 /* Header */
@@ -53,6 +54,24 @@ nav {
 
 .card-image {
   width: 12em;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.containerCardTitleLikeBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.containerLikes {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .like-button {

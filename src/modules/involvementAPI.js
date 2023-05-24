@@ -23,6 +23,5 @@ export const getLikes = async () => {
     'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/xqHl95viv3D6FREdQd3p/likes',
   );
   const likesData = await response.json();
-  // console.log(likesData);
   return likesData;
 };

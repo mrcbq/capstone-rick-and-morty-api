@@ -28,4 +28,4 @@ charactersData.forEach((character) => {
   container.appendChild(card);
 });
 
-postLike('901');
+// postLike('901');

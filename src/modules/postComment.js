@@ -12,7 +12,7 @@ const postComment = async (id, username, commente) => {
       }),
     });
   } catch (error) {
-    alert(error);
+    console.log(error.message);
   }
 };
 

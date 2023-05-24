@@ -9,9 +9,9 @@ const fetchComments = async (id) => {
     const noComments = ['No comments yet'];
     return noComments;
   } catch (error) {
-    console.log(error.message);
+    alert(error.message);
   }
-  return data;
+  return 0;
 };
 
 export default fetchComments;

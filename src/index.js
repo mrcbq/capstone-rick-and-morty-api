@@ -3,8 +3,8 @@ import getCharacters from './modules/characters.js';
 import createCard from './modules/createCard.js';
 import popupComments from './modules/commentsPopup.js';
 import { postLike, getLikes } from './modules/involvementAPI.js';
-import getRandomArray from './modules/randomNumber.js';
 import getCounterCards from './modules/counterCards.js';
+// import getRandomArray from './modules/randomNumber.js';
 
 const containerPopup = document.querySelector('.popup');
 const container = document.getElementById('cards-container');

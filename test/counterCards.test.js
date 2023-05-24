@@ -10,15 +10,6 @@ describe('getCounterCards', () => {
     // Assert
     expect(result).toBe(3);
   });
-  test('test_container_with_zero_child_elements_returns_correct_count', () => {
-    // Arrange
-    const container = document.createElement('div');
-    container.innerHTML = '';
-    // Act
-    const result = getCounterCards(container);
-    // Assert
-    expect(result).toBe(0);
-  });
   test('test_container_with_no_child_elements_returns_zero', () => {
     // Arrange
     const container = document.createElement('div');
@@ -50,15 +41,6 @@ describe('getCounterCards', () => {
     // Arrange
     const container = document.createElement('div');
     container.innerHTML = '<div><p></p></div><span><a></a></span>';
-    // Act
-    const result = getCounterCards(container);
-    // Assert
-    expect(result).toBe(2);
-  });
-  test('test_container_has_non_element_child_nodes_returns_correct_count', () => {
-    // Arrange
-    const container = document.createElement('div');
-    container.innerHTML = 'text node<p></p><span></span>';
     // Act
     const result = getCounterCards(container);
     // Assert

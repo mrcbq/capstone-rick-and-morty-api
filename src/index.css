@@ -17,6 +17,10 @@ header {
   min-height: 8rem;
 }
 
+#logo {
+  width: 5rem;
+}
+
 nav {
   width: 22.5em;
 }

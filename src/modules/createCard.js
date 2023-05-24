@@ -32,7 +32,6 @@ const createCard = (character) => {
 
   const idIsEqualsTo = (likeObj, idx) => likeObj.item_id === idx;
   const result = likesData.find((obj) => idIsEqualsTo(obj, card.id)) ?? 0;
-  // console.log(result.likes ?? 0);
 
   const likesNumber = document.createElement('p');
   likesNumber.textContent = `${result.likes ?? 0} Likes`;

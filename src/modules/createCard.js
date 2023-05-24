@@ -20,9 +20,9 @@ const createCard = (character) => {
 
   const likeButton = document.createElement('button');
   likeButton.classList.add('like-button');
-  likeButton.addEventListener('click', () => {
-    console.log(`Liked ${character.name}`);
-  });
+  // likeButton.addEventListener('click', () => {
+  //   console.log(`Liked ${character.name}`);
+  // });
 
   const likeButtonImg = document.createElement('img');
   likeButtonImg.src = likeImg;
@@ -36,13 +36,10 @@ const createCard = (character) => {
   const commentsButton = document.createElement('button');
   commentsButton.classList.add('comments-button');
   commentsButton.textContent = 'Comments';
-  commentsButton.addEventListener('click', () => {
-    console.log(`Comment ${character.name}`);
-  });
   container.appendChild(commentsButton);
 
   const reservationsButton = document.createElement('button');
-  reservationsButton.classList.add('comments-button');
+  reservationsButton.classList.add('reservations-button');
   reservationsButton.textContent = 'Reservations';
   container.appendChild(reservationsButton);
 

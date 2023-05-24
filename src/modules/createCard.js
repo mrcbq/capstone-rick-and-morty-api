@@ -2,7 +2,6 @@ import likeImg from '../img/icons8-heart-32.png';
 import { getLikes } from './involvementAPI.js';
 
 const likesData = await getLikes();
-console.log(likesData[0]);
 
 const createCard = (character) => {
   const card = document.createElement('div');
@@ -31,8 +30,12 @@ const createCard = (character) => {
   likeButton.appendChild(likeButtonImg);
   container.appendChild(likeButton);
 
+  const idIsEqualsTo = (likeObj, idx) => likeObj.item_id === idx;
+  const result = likesData.find((obj) => idIsEqualsTo(obj, card.id)) ?? 0;
+  // console.log(result.likes ?? 0);
+
   const likesNumber = document.createElement('p');
-  likesNumber.textContent = '5 Likes';
+  likesNumber.textContent = `${result.likes ?? 0} Likes`;
   container.appendChild(likesNumber);
 
   const commentsButton = document.createElement('button');

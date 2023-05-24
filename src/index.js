@@ -17,15 +17,15 @@ container.addEventListener('click', async (e) => {
     popupComments(characterDetail, containerPopup);
   } else if (e.target.classList.contains('like-img')) {
     const { id } = e.target.parentElement.parentElement.parentElement;
-    // console.log(id);
     await postLike(id);
+    const likesData = await getLikes();
+    const idIsEqualsTo = (likeObj, idx) => likeObj.item_id === idx;
+    const result = likesData.find((obj) => idIsEqualsTo(obj, id)) ?? 0;
+    e.target.parentElement.parentElement.children[2].textContent = `${result.likes ?? 0} Likes`;
   }
 });
 
 charactersData.forEach((character) => {
   const card = createCard(character);
-  // console.log(card);
   container.appendChild(card);
 });
-
-getLikes();

@@ -14,6 +14,7 @@ header {
   gap: 3em;
   justify-content: center;
   padding: 1em;
+  min-height: 8rem;
 }
 
 nav {
@@ -35,7 +36,7 @@ nav {
 
 #cards-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   justify-items: center;
   width: 90%;
   margin: 2em auto;
@@ -43,6 +44,7 @@ nav {
 
 .card {
   margin-bottom: 1em;
+  padding: 1rem;
 }
 
 .card-image {

@@ -1,4 +1,4 @@
-const postLike = async (id) => {
+export const postLike = async (id) => {
   const headersList = {
     'Content-Type': 'application/json',
   };
@@ -20,4 +20,11 @@ const postLike = async (id) => {
   return data;
 };
 
-export default postLike;
+export const getLikes = async () => {
+  const response = await fetch(
+    'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/xqHl95viv3D6FREdQd3p/likes',
+  );
+  const likesData = await response.text();
+  console.log(likesData);
+  return likesData;
+};

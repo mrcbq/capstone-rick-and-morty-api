@@ -1,4 +1,8 @@
 import likeImg from '../img/icons8-heart-32.png';
+import { getLikes } from './involvementAPI.js';
+
+const likesData = await getLikes();
+console.log(likesData[0]);
 
 const createCard = (character) => {
   const card = document.createElement('div');

@@ -120,6 +120,7 @@ footer p {
   overflow: scroll;
   width: 70%;
   background-color: rgb(203, 39, 253);
+  border: 4px ridge #232323;
 }
 
 .popup-ele::-webkit-scrollbar {
@@ -236,13 +237,22 @@ footer p {
 
 .button-comment {
   width: 9em;
-  padding: 0.4em;
 }
 
 button:not(.like-button, .quit-button){
   box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 2.2px;
-  background-color: #28e135dd;
+  background-color: #28e134d0;
   border-radius: 5px;
+  transition: all 0.2s;
+  padding: 0.3em;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:not(.like-button, .quit-button):hover {
+  transform: scale(1.05);
 }
 
 @media (max-width: 768px) {

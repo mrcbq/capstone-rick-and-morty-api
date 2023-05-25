@@ -6,8 +6,6 @@ const getComments = async (id) => {
     if (response.ok) {
       return data;
     }
-    const noComments = ['No comments yet'];
-    return noComments;
   } catch (error) {
     console.log(error.message);
   }

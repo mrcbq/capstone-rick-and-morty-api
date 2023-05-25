@@ -24,7 +24,7 @@ container.addEventListener('click', async (e) => {
     const likesData = await getLikes();
     const idIsEqualsTo = (likeObj, idx) => likeObj.item_id === idx;
     const result = likesData.find((obj) => idIsEqualsTo(obj, id)) ?? 0;
-    e.target.parentElement.children[1].textContent = `${result.likes ?? 0} Likes`;
+    e.target.nextSibling.textContent = `${result.likes ?? 0} Likes`;
   }
 });
 

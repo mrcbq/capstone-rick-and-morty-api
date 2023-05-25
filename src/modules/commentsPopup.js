@@ -51,7 +51,6 @@ const popupComments = (data, container) => {
   const commentsData = async () => {
     const commentsContent = await getComments(data.id);
     commentsContainer.innerHTML = '';
-    console.log(commentsContent)
     if (commentsContent !== 0) {
       commentsContent.forEach((comment) => {
         commentsContainer.innerHTML += `

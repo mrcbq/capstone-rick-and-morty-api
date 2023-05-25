@@ -33,6 +33,8 @@
 
 In this project we decide to consume the Rick and Morty API to make a web page to display characters in cards with popup window, characters descriptions, likes and section of comments.
 
+- You can watch the description of the project [here.](https://drive.google.com/file/d/1KFuJ6Um0O_U1fnMbIoZs3Bdw-5j2ANKf/view?usp=share_link)
+
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
@@ -125,7 +127,9 @@ To run tests, run the following command:
 
 ### Deployment
 
-> Comming Soon...
+```sh
+  npm run deploy
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -153,7 +157,7 @@ To run tests, run the following command:
 
 ## Walkthrough <a name="walkthrough"></a>
 
-> Comming Soon...
+You can watch the video description of the project [here](https://drive.google.com/file/d/1KFuJ6Um0O_U1fnMbIoZs3Bdw-5j2ANKf/view?usp=share_link).
 
 <!-- CONTRIBUTING -->
 

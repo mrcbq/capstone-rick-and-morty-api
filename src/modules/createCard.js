@@ -1,5 +1,5 @@
-import likeImg from '../img/icons8-heart-32.png';
 import { getLikes } from './involvementAPI.js';
+// import likeImg from '../img/icons8-heart-32.png';
 
 const likesData = await getLikes();
 
@@ -30,8 +30,8 @@ const createCard = (character) => {
   const likeButton = document.createElement('button');
   likeButton.classList.add('like-button');
 
-  const likeButtonImg = document.createElement('img');
-  likeButtonImg.src = likeImg;
+  const likeButtonImg = document.createElement('div');
+  // likeButtonImg.src = likeImg;
   likeButtonImg.classList.add('like-img');
 
   likeButton.appendChild(likeButtonImg);
@@ -42,7 +42,6 @@ const createCard = (character) => {
 
   const likesNumber = document.createElement('p');
   likesNumber.textContent = `${result.likes ?? 0} Likes`;
-  // likesNumber.textContent = '5 Likes';
   containerLikes.appendChild(likesNumber);
   containerCardTitleLikeBtn.appendChild(containerLikes);
   container.appendChild(containerCardTitleLikeBtn);

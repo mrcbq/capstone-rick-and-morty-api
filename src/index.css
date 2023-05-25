@@ -16,6 +16,10 @@
     'Segoe UI Symbol';
 }
 
+body {
+  background-color: cornsilk;
+}
+
 /* Header */
 header {
   display: flex;
@@ -58,6 +62,8 @@ nav {
 .card {
   margin-bottom: 1em;
   padding: 1rem;
+  border: 1px solid #000;
+  background-color: papayawhip;
 }
 
 .card-image {
@@ -68,6 +74,11 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+}
+
+h4 {
+  max-width: 6rem;
+  margin-top: 0.7rem;
 }
 
 .containerCardTitleLikeBtn {
@@ -83,9 +94,33 @@ nav {
 }
 
 .like-button {
-  background-color: unset;
   border: none;
   cursor: pointer;
+  background: url('./assets/web_heart_animation.webp');
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: 1450px;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+}
+
+.like-button:hover {
+  animation-duration: 0.9s;
+  animation-iteration-count: infinite;
+  animation-name: heartTransition;
+  animation-timing-function: steps(28);
+  background-position: right;
+}
+
+@-webkit-keyframes heartTransition {
+  0% { background-position: left; }
+  100% { background-position: right; }
+}
+
+@keyframes heartTransition {
+  0% { background-position: left; }
+  100% { background-position: right; }
 }
 
 /* Footer */

@@ -51,14 +51,14 @@ const popupComments = (data, container) => {
   const commentsData = async () => {
     const commentsContent = await getComments(data.id);
     commentsContainer.innerHTML = '';
-    if (commentsContent[0].creation_date) {
+    if (commentsContent !== 0) {
       commentsContent.forEach((comment) => {
         commentsContainer.innerHTML += `
           <li class="individual-comment"><p>${comment.creation_date} ${comment.username}: ${comment.comment}</p></li>
       `;
       });
     } else {
-      commentsContainer.innerHTML = `<li><p>${commentsContent[0]}</p></li>`;
+      commentsContainer.innerHTML = 'No Comments Yet';
     }
 
     headingComments.textContent = `Comment(${counterComments(commentsContainer)})`;

@@ -17,7 +17,7 @@
 }
 
 body {
-  background-color: cornsilk;
+  background-color: #d2e054;
 }
 
 /* Header */
@@ -28,6 +28,8 @@ header {
   justify-content: center;
   padding: 1em;
   min-height: 8rem;
+  background-color: #48983021;
+  box-shadow: rgba(0, 0, 0, 0.15) 5.4px 2.4px 3.2px;
 }
 
 #logo {
@@ -62,12 +64,14 @@ nav {
 .card {
   margin-bottom: 1em;
   padding: 1rem;
-  border: 1px solid #000;
-  background-color: papayawhip;
+  border: 2px solid #000;
+  background-color: #fffac2;
+  border-radius: 15px;
 }
 
 .card-image {
   width: 12em;
+  border-radius: 10px;
 }
 
 .container {
@@ -127,9 +131,8 @@ h4 {
 
 footer {
   padding: 2em;
-  border-top: 1px solid #000;
   width: 100%;
-  background-color: #fff;
+  background-color: #48983021;
   margin-top: 1em;
 }
 
@@ -163,12 +166,12 @@ button {
   z-index: 2;
   top: 1em;
   padding: 1em;
-  border-radius: 4px;
   height: 95%;
   overflow: scroll;
   width: 70%;
-  background-color: rgb(203, 39, 253);
-  border: 4px ridge #232323;
+  background-color: #d2e054;
+  border: 4px ridge #000;
+  border-radius: 15px;
 }
 
 .popup-ele::-webkit-scrollbar {
@@ -223,7 +226,7 @@ button {
 
 .popup-description-elements p,
 .comments-elements li p {
-  color: #fffffff0;
+  color: #000000f0;
 }
 
 .comments-section {
@@ -285,7 +288,7 @@ button {
   box-shadow: rgba(0, 0, 0, 0.15) 5.4px 3.4px 3.2px;
   transition: transform 0.3s;
   border-radius: 4px;
-  color: #fff;
+  color: #000;
 }
 
 #comment-form input:focus,
@@ -299,7 +302,7 @@ button {
 
 button:not(.like-button, .quit-button) {
   box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 2.2px;
-  background-color: #28e134d0;
+  background-color: #12b0c9;
   border-radius: 5px;
   transition: all 0.2s;
   padding: 0.3em;

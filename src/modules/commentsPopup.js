@@ -40,7 +40,7 @@ const popupComments = (data, container, body) => {
   const quitButton = document.querySelector('#quit');
   quitButton.addEventListener('click', () => {
     body.classList.remove('overflow-h');
-    container.classList.remove('background-gradient')
+    container.classList.remove('background-gradient');
     container.innerHTML = '';
   });
 

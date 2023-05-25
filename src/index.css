@@ -104,6 +104,10 @@ footer p {
 
 /* Pop up Window */
 
+button {
+  cursor: pointer;
+}
+
 .popup {
   width: 100%;
   display: flex;
@@ -258,16 +262,12 @@ footer p {
   width: 9em;
 }
 
-button:not(.like-button, .quit-button){
+button:not(.like-button, .quit-button) {
   box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 2.2px;
   background-color: #28e134d0;
   border-radius: 5px;
   transition: all 0.2s;
   padding: 0.3em;
-}
-
-button {
-  cursor: pointer;
 }
 
 button:not(.like-button, .quit-button):hover {

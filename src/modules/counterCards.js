@@ -1,3 +1,8 @@
-const getCounterCards = (container) => container.childElementCount;
+const getCounterCards = (container) => {
+  if (container) {
+    return container.childElementCount;
+  }
+  return 0;
+};
 
 export default getCounterCards;

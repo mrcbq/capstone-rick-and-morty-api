@@ -110,9 +110,18 @@ footer p {
   justify-content: center;
 }
 
+.background-gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  backdrop-filter: blur(5px);
+}
+
 .popup-ele {
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   top: 1em;
   padding: 1em;
   border-radius: 4px;
@@ -169,6 +178,15 @@ footer p {
   margin: 1.5em;
 }
 
+.popup-description-elements p {
+  font-size: 1.1em;
+}
+
+.popup-description-elements p,
+.comments-elements li p {
+  color: #fffffff0;
+}
+
 .comments-section {
   margin-bottom: 1.5em;
 }
@@ -184,7 +202,7 @@ footer p {
 
 .comments-elements li {
   margin-bottom: 0.4em;
-  background-color: rgba(150, 150, 150, 0.115);
+  background-color: rgba(74, 74, 74, 0.115);
   box-shadow: rgba(0, 0, 0, 0.15) 2.4px 1.4px 3.2px;
   border-radius: 5px;
   padding: 0.2em;
@@ -228,6 +246,7 @@ footer p {
   box-shadow: rgba(0, 0, 0, 0.15) 5.4px 3.4px 3.2px;
   transition: transform 0.3s;
   border-radius: 4px;
+  color: #fff;
 }
 
 #comment-form input:focus,

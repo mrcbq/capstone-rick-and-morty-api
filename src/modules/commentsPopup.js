@@ -4,6 +4,8 @@ import getComments from './getComments.js';
 import counterComments from './counterComments.js';
 
 const popupComments = (data, container) => {
+  document.body.classList.add('overflow-h');
+  container.classList.add('background-gradient');
   container.innerHTML = `
     <div class="popup-ele">
         <div class="button-div">
@@ -29,14 +31,16 @@ const popupComments = (data, container) => {
             <h2>Add a Comment</h2>
             <form id="comment-form">
                 <input type="text" id="username" name="username" placeholder="Your Name" required> <br>
-                <textarea id="text-area" placeholder="Your insights" maxlength="300" name="message" required></textarea> <br>
-                <button type="submit" class="button-comment">Comments</button>
+                <textarea type="text" id="text-area" placeholder="Your insights" maxlength="300" name="message" required></textarea> <br>
+                <button type="submit" class="button-comment">Comment</button>
             </form>
         </div>
     </div>
     `;
   const quitButton = document.querySelector('#quit');
   quitButton.addEventListener('click', () => {
+    document.body.classList.remove('overflow-h');
+    container.classList.remove('background-gradient');
     container.innerHTML = '';
   });
 

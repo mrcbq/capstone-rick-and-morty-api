@@ -139,21 +139,44 @@ footer p {
 
 /* Pop up Window */
 
+button {
+  cursor: pointer;
+}
+
 .popup {
   width: 100%;
   display: flex;
   justify-content: center;
 }
 
+.background-gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  backdrop-filter: blur(5px);
+}
+
 .popup-ele {
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   top: 1em;
   padding: 1em;
   border-radius: 4px;
-  height: auto;
+  height: 95%;
+  overflow: scroll;
   width: 70%;
-  background-color: rgb(226, 226, 226);
+  background-color: rgb(203, 39, 253);
+  border: 4px ridge #232323;
+}
+
+.popup-ele::-webkit-scrollbar {
+  display: none;
+}
+
+.overflow-h {
+  overflow: hidden;
 }
 
 .popup-description {
@@ -165,6 +188,9 @@ footer p {
 .popup-description img {
   width: 15em;
   margin-bottom: 1em;
+  box-shadow: rgba(0, 0, 0, 0.15) 5.4px 3.4px 3.2px;
+  border: 2px solid #000;
+  border-radius: 6px;
 }
 
 .button-div {
@@ -175,7 +201,7 @@ footer p {
 .quit-button {
   border: none;
   cursor: pointer;
-  background-color: #edebeb;
+  background-color: unset;
   height: 2.25em;
 }
 
@@ -189,6 +215,37 @@ footer p {
   column-gap: 3em;
   row-gap: 1em;
   margin: 1.5em;
+}
+
+.popup-description-elements p {
+  font-size: 1.1em;
+}
+
+.popup-description-elements p,
+.comments-elements li p {
+  color: #fffffff0;
+}
+
+.comments-section {
+  margin-bottom: 1.5em;
+}
+
+.heading-comment {
+  text-align: center;
+  margin-bottom: 0.8em;
+}
+
+.comments-elements {
+  list-style: none;
+}
+
+.comments-elements li {
+  margin-bottom: 0.4em;
+  background-color: rgba(74, 74, 74, 0.115);
+  box-shadow: rgba(0, 0, 0, 0.15) 2.4px 1.4px 3.2px;
+  border-radius: 5px;
+  padding: 0.2em;
+  max-width: 25em;
 }
 
 .popup-form-section {
@@ -212,7 +269,6 @@ footer p {
 
 #comment-form input {
   max-width: 12em;
-  padding: 0.3em;
 }
 
 #comment-form textarea {
@@ -220,9 +276,37 @@ footer p {
   height: 6em;
 }
 
+#comment-form input,
+#comment-form textarea {
+  padding: 0.3em;
+  border: 3px solid #d8ffd082;
+  outline-color: #e1f8e389;
+  background-color: #ffffff47;
+  box-shadow: rgba(0, 0, 0, 0.15) 5.4px 3.4px 3.2px;
+  transition: transform 0.3s;
+  border-radius: 4px;
+  color: #fff;
+}
+
+#comment-form input:focus,
+#comment-form textarea:focus {
+  transform: scale(1.05);
+}
+
 .button-comment {
   width: 9em;
-  padding: 0.4em;
+}
+
+button:not(.like-button, .quit-button) {
+  box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 2.2px;
+  background-color: #28e134d0;
+  border-radius: 5px;
+  transition: all 0.2s;
+  padding: 0.3em;
+}
+
+button:not(.like-button, .quit-button):hover {
+  transform: scale(1.05);
 }
 
 @media (max-width: 768px) {

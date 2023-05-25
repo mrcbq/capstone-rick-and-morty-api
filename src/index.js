@@ -9,6 +9,7 @@ import getCounterCards from './modules/counterCards.js';
 const containerPopup = document.querySelector('.popup');
 const container = document.getElementById('cards-container');
 const counterCards = document.getElementById('counter-cards');
+const body = document.querySelector('body');
 
 const charactersData = await getCharacters([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]);
 // const charactersData = await getCharacters(getRandomArray(Math.random() * 10 + 1));
@@ -17,7 +18,7 @@ container.addEventListener('click', async (e) => {
   if (e.target.classList.contains('comments-button')) {
     const { id } = e.target.parentElement.parentElement;
     const characterDetail = await getCharacters(id);
-    popupComments(characterDetail, containerPopup);
+    popupComments(characterDetail, containerPopup, body);
   } else if (e.target.classList.contains('like-img')) {
     const { id } = e.target.parentElement.parentElement.parentElement.parentElement.parentElement;
     await postLike(id);

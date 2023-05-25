@@ -3,7 +3,8 @@ import postComment from './postComment.js';
 import getComments from './getComments.js';
 import counterComments from './counterComments.js';
 
-const popupComments = (data, container) => {
+const popupComments = (data, container, body) => {
+  body.classList.add('overflow-h')
   container.innerHTML = `
     <div class="popup-ele">
         <div class="button-div">
@@ -37,6 +38,7 @@ const popupComments = (data, container) => {
     `;
   const quitButton = document.querySelector('#quit');
   quitButton.addEventListener('click', () => {
+    body.classList.remove('overflow-h')
     container.innerHTML = '';
   });
 

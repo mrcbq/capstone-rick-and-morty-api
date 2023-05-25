@@ -116,9 +116,18 @@ footer p {
   top: 1em;
   padding: 1em;
   border-radius: 4px;
-  height: auto;
+  height: 95%;
+  overflow: scroll;
   width: 70%;
   background-color: rgb(226, 226, 226);
+}
+
+.popup-ele::-webkit-scrollbar {
+  display: none;
+}
+
+.overflow-h {
+  overflow: hidden;
 }
 
 .popup-description {

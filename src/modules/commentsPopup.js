@@ -31,7 +31,7 @@ const popupComments = (data, container, body) => {
             <form id="comment-form">
                 <input type="text" id="username" name="username" placeholder="Your Name" required> <br>
                 <textarea id="text-area" placeholder="Your insights" maxlength="300" name="message" required></textarea> <br>
-                <button type="submit" class="button-comment">Comments</button>
+                <button type="submit" class="button-comment">Comment</button>
             </form>
         </div>
     </div>
